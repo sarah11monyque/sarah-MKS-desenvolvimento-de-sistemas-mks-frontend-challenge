@@ -48,7 +48,7 @@ const H1 =  styled.h1({
     ssr: false
   })
 
-export default () => {
+const HeaderComponent = () => {
   const [isOpen, setIsOpen] = useState(false)
   const {produtos} = useContext(ProdutosContext);
 
@@ -65,3 +65,5 @@ export default () => {
       </>
     )
 };
+
+export default HeaderComponent

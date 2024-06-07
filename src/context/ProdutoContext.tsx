@@ -10,4 +10,5 @@ export interface ProdutoInterface {
     photo: string,
     price: string,
     qtd: number,
+    
 }

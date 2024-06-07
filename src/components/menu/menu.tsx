@@ -257,7 +257,7 @@ const Menu = (props: {
                 <div style={{padding: '20px 0px 0px 60px'}}>
                     <TituloMenuAndClose  isOpen={props.isOpen}  methodIsOpen={props.methodIsOpen}/>
                     <CardContainerLayout>
-                        {produtosComCompra.map(prd => <CardMenu card={prd}/>)}
+                        {produtosComCompra.map((prd, i) => <CardMenu key={i} card={prd}/>)}
                     </CardContainerLayout>
                 </div>
                 <ButtonFinalizar total={totalCompra}/>
