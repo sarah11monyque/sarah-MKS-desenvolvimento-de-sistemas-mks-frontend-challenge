@@ -1,12 +1,14 @@
 {
-  "name": "my-app",
+  "homepage": "http://sarah11monyque.github.io/MKS-desenvolvimento-de-sistemas-mks-frontend-challenge",
+  "name": "MKS-desenvolvimento-de-sistemas-mks-frontend-challenge",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "framer-motion": "^11.2.10",

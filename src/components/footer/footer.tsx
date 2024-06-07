@@ -15,7 +15,7 @@ const Text = styled.p({
 
 })
 
-export default () => {
+const FooterComponent = () => {
     return (
         <Footer>
             <Text>MKS sistemas © Todos os direitos reservados</Text>
@@ -24,3 +24,6 @@ export default () => {
 }
 
 
+
+
+export default FooterComponent;
