@@ -3,6 +3,7 @@ import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, Suspense, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import './menu.css';
 
 const TituloMenuAndCloseStyle = styled.div({
     display: 'flex',
@@ -26,7 +27,7 @@ const CardMenuStyled = styled.div({
     backgroundColor: '#FFFFFF',
     borderRadius: '8px',
     margin: '15px 0px',
-    color: '#000000'
+    color: '#000000',
 })
 
 const CardName = styled.div({
@@ -102,7 +103,7 @@ const CardMenu = (props: {
     }
 
     return (
-        <CardMenuStyled>
+        <CardMenuStyled className="mobile-card">
             <Image src={props.card.photo} alt={props.card.name} width={80} height={80}/>
             <CardName>
                 {props.card.name}
