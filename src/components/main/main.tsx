@@ -1,7 +1,7 @@
 import { Context, Suspense, createContext, useContext, useEffect, useState } from "react";
 import { CardContainerLayout, CardContainerLayoutLoad } from "../card/card";
 import styled from "styled-components";
-import { ProdutosContext } from "@/context/ProdutoContext";
+import { ProdutoInterface, ProdutosContext } from "@/context/ProdutoContext";
 
 
 
@@ -18,7 +18,7 @@ const MainComponent = () => {
             .then( (data) => {
                 setProdutos([...data.products])
             })
-    }); 
+    }, []); 
 
     if (!produtos) return <CardContainerLayoutLoad />
 
