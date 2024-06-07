@@ -3,9 +3,8 @@ const path = import ('path')
  
 const nextConfig = {
     compiler: {
-        styledComponents: true,
-        reactStrictMode: true
-    },
+        styledComponents: true
+      },
     images: {
         remotePatterns: [
           {
