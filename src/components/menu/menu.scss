@@ -1,0 +1,52 @@
+
+.mobile-hidden {
+    display: block;
+}
+.mobile-show {
+    display: none;
+}
+
+@media screen and (max-width: 900px){
+    .mobile-card {
+        flex-direction: column;
+        height: 312px;
+        width: 100%;
+        .card-titulo {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .card-buttons-qtd {
+            display: flex;
+            .qtd {
+                display: none;
+            }
+        }
+    }
+    
+    .card-buttons-price {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 0px 40px 20px 40px;
+        align-items: center;
+    }
+
+    .card-buttons-qtd {
+        width: 130px;
+        padding: 5px 20px;
+    }
+    
+
+    .menu-mobile {
+       width: 100vw !important; 
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+    .mobile-show {
+        display: flex;
+    }
+}

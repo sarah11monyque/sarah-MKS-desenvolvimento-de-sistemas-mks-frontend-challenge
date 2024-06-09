@@ -1,8 +1,0 @@
-
-@media screen and (max-width: 900px){
-    .mobile-card {
-        flex-direction: column;
-        height: 300px;
-
-    }
-}

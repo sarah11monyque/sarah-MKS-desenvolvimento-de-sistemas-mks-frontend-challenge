@@ -3,7 +3,9 @@ import styled from "styled-components"
 import iconComprar from '../../../public/icon-comprar.svg'
 import { LazyMotion, Variants, domAnimation, m } from "framer-motion"
 import { ProdutoInterface, ProdutosContext } from "@/context/ProdutoContext"
-import { Dispatch, SetStateAction, useContext } from "react"
+import { useContext } from "react"
+import { somaMaisUm } from "../utils/math.utils"
+import { formatPrice } from "../utils/currency.utils"
 
 const Card = styled.div({
     width: '260px',
@@ -42,7 +44,7 @@ const TitleAndPriceContainer = styled.div({
     padding: '0px 20px'
 })
 
-const SpanPrice = styled.span({
+export const SpanPrice = styled.span({
     display: 'flex',
     height: '26px',
     backgroundColor: '#373737',
@@ -115,28 +117,6 @@ export const CardLayout = (props: {
 }) => {
     const {produtos, setProdutos} = useContext(ProdutosContext)
 
-    const formatPrice = `${Number(props.card.price).toLocaleString('pt-BR', {
-        style: 'currency', 
-        currency: 'BRL'
-    })}`
-
-    const findItem = (): ProdutoInterface | undefined => {
-        return produtos.find(produto => produto?.id ===  props?.card?.id)
-    }
-    const soma = () => {
-        const item = findItem()
-       if(!item) {
-            return;
-       }
-        if(!item?.qtd){
-            item.qtd = 1
-            setProdutos([...produtos])
-            return;
-        }
-        item.qtd++
-       setProdutos([...produtos])
-    }
-
     return(
         <Card>
             <ImageContainer>
@@ -144,10 +124,10 @@ export const CardLayout = (props: {
             </ImageContainer>
             <TitleAndPriceContainer>
                 <TitleProduct>{props.card.name}</TitleProduct>
-                <SpanPrice>{formatPrice}</SpanPrice>
+                <SpanPrice>{formatPrice(props.card.price)}</SpanPrice>
             </TitleAndPriceContainer>
             <DescricaoProduto>{props.card.description}</DescricaoProduto>
-            <ButtonComprar onClick={() => {soma()}}><Image src={iconComprar} alt="comprar" width={16} height={16}/> Comprar</ButtonComprar>
+            <ButtonComprar onClick={() => {somaMaisUm(produtos, props.card.id, setProdutos.bind(this))}}><Image src={iconComprar} alt="comprar" width={16} height={16}/> Comprar</ButtonComprar>
         </Card>
     )
 }
