@@ -122,6 +122,7 @@ const CardMenu = (props: {
         setProdutos([...produtos])
     }
 
+    
     return (
         <CardMenuStyled className="mobile-card">
             <BtnClosedCardMenu>
